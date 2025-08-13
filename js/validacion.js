@@ -1,18 +1,17 @@
 const submitBtn = document.getElementById('regBtn');
 const form = document.querySelector('form');
 
-submitBtn.addEventListener('submit', (e) => {
+form.addEventListener('submit', (e) => {
   const contrasena = document.getElementById('password1').value;
   const contrasena2 = document.getElementById('password2').value;
-  e.preventDefault();
 
   if (!form.checkValidity()) {
-    return; // el navegador mostrará los mensajes de required
+    return;
   }
-
   if (contrasena === contrasena2) {
     showAlertSuccess();
   } else {
+    e.preventDefault();
     showAlertError();
   }
 });
