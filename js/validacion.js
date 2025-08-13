@@ -8,12 +8,15 @@ form.addEventListener('submit', (e) => {
   if (!form.checkValidity()) {
     return;
   }
-  if (contrasena === contrasena2) {
+  
+  if (contrasena === contrasena2 && contrasena.lenght>=6 ) {
     showAlertSuccess();
   } else {
     e.preventDefault();
     showAlertError();
   }
+  
+  
 });
 
 function showAlertSuccess() {
@@ -25,3 +28,4 @@ function showAlertError() {
   document.getElementById('alert-danger').classList.add('show');
   document.getElementById('alert-success').classList.remove('show');
 }
+
